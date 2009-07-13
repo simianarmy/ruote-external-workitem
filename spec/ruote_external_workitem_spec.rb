@@ -97,8 +97,8 @@ describe RuoteExternalWorkitem::Base do
 
   it "should spill itself as json" do
     lambda {
-      JSON.parse( @wi.to_json )
-    }.should_not raise_error(JSON::JSONError)
+      ActiveSupport::JSON.decode( @wi.to_json )
+    }.should_not raise_error
   end
 end
 

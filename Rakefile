@@ -4,15 +4,15 @@ require 'rake'
 begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
-    gem.name = "ruote-external-workitem"
+    gem.name = "ruote-external-workitem-rails"
     gem.summary = %Q{TODO}
-    gem.email = "kenneth.kalmer@gmail.com"
-    gem.homepage = "http://github.com/kennethkalmer/ruote-external-workitem"
-    gem.authors = ["Kenneth Kalmer"]
+    gem.email = "simianarmy@gmail.com"
+    gem.homepage = "http://github.com/simianarmy/ruote-external-workitem"
+    gem.authors = ["Kenneth Kalmer", "Marc Mauger"]
 
     # gem is a Gem::Specification... see
     # http://www.rubygems.org/read/chapter/20 for additional settings
-    gem.add_dependency 'json_pure', '>= 1.1.4'
+    gem.add_dependency 'active_support'
   end
 rescue LoadError
   puts "Jeweler not available. Install it with: sudo gem install technicalpickles-jeweler -s http://gems.github.com"

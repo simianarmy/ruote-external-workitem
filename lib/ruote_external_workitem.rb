@@ -1,11 +1,7 @@
 $:.unshift( File.dirname(__FILE__) ) unless $:.include?( File.dirname(__FILE__) )
 
-begin
-  require 'json'
-rescue LoadError
-  require 'rubygems'
-  require 'json'
-end
+require 'rubygems'
+require 'active_support'
 
 # Provide a thin wrapper around the OpenWFE::InFlowWorkItem instances
 # that eases interacting with the workitems from outside of the
@@ -21,7 +17,7 @@ module RuoteExternalWorkitem
     # Parse the string representation of a OpenWFE::InFlowWorkItem
     # instance from JSON
     def parse( json_string )
-      Base.new( JSON.parse( json_string ) )
+      Base.new( ActiveSupport::JSON.decode( json_string ) )
     end
   end
 end

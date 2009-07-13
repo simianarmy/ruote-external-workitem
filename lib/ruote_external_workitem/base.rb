@@ -51,7 +51,7 @@ module RuoteExternalWorkitem
     end
 
     def to_json
-      @workitem.to_json
+      ActiveSupport::JSON.encode(@workitem)
     end
 
     def method_missing( method_name, *args )
